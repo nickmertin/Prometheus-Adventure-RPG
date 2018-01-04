@@ -1,0 +1,59 @@
+﻿<Config xmlns="clr-namespace:Prometheus_Adventure_RPG.DataModel" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartEventKey="start">
+    <Config.Events>
+        <GameOver x:Key="win" Win="True" DisplayText="You win!"/>
+        <GameOver x:Key="lose" Win="False" DisplayText="You lose!"/>
+        <Info x:Key="start" NextEventKey="first-fork">
+            <Info.DisplayText>
+                <sys:String>
+                    The year is 5285 B.C. You are Prometheus, the Titan of foresight. You have just created the human race, to whom you wish to give the gift of fire. However, Zeus disagrees with you, and has issued an order that fire shall never be given to mortals. This places some tough decisions ahead of you.
+                </sys:String>
+            </Info.DisplayText>
+        </Info>
+        <Fork x:Key="first-fork" Question="Do you give them fire?">
+            <Fork.DisplayText>
+                <sys:String>
+                    Humans are currently nothing more than hunters and gatherers, and you soon realize that they will not advance toward substantial civilization without fire.
+                </sys:String>
+            </Fork.DisplayText>
+            <Fork.Possibilities>
+                <ForkPossibility Text="Yes" NextKey="fire" />
+                <ForkPossibility Text="No" NextKey="nofire" />
+            </Fork.Possibilities>
+        </Fork>
+        <Fork x:Key="fire" Question="Do you show them how to build houses and farm the land, or let them be in the hopes that they should develop civilization on their own?">
+            <Fork.DisplayText>
+                <sys:String>
+                    You steal a spark of fire from the gods on Olympus, and give it to humans as your gift. They are still a primitive society, but your gift gives them some potential to become more advanced. However, you fear that you will attract Zeus's attention should give them additional help against his will.
+                </sys:String>
+            </Fork.DisplayText>
+            <Fork.Possibilities>
+                <ForkPossibility Text="Teach them to build houses and farm the land" NextKey="teach" />
+                <ForkPossibility Text="Sit back and watch them figure it out themselves" NextKey="noteach" />
+            </Fork.Possibilities>
+        </Fork>
+        <Info x:Key="nofire" NextEventKey="lose">
+            <Info.DisplayText>
+                <sys:String>
+                    Humans survive for a few years, but eventually die off because their population was unable to grow substantially.
+                </sys:String>
+            </Info.DisplayText>
+        </Info>
+        <Fork x:Key="teach" Question="Who do you give the box to?">
+            <Fork.DisplayText>
+                <sys:String>
+                    You show humans all they need to develop civilization, and indeed, within a couple of months, Zeus takes notice of their development and realizes that they would not have been able to do anything without your help. He decides to punish you for your actions. Before you go, however, you have a sealed box full of all types of evil that would be devastating if released upon humankind, and you must put it in safe hands.
+                </sys:String>
+            </Fork.DisplayText>
+            <Fork.Possibilities>
+                <ForkPossibility Text="A human leader." />
+            </Fork.Possibilities>
+        </Fork>
+        <Info x:Key="noteach" NextEventKey="lose">
+            <Info.DisplayText>
+                <sys:String>
+                    Humans slowly start to develop civilization, however once Zeus takes notice of their advancement and realizes their greedy and exploitive poitential, he all but wipes out their entire species, leaving behind nothing.
+                </sys:String>
+            </Info.DisplayText>
+        </Info>
+    </Config.Events>
+</Config>

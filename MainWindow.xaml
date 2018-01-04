@@ -1,0 +1,11 @@
+﻿<Window x:Class="Prometheus_Adventure_RPG.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Prometheus_Adventure_RPG" mc:Ignorable="d" Title="Prometheus Adventure RPG" Height="350" Width="525" WindowStyle="None" WindowState="Maximized" Background="Black">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+        </Style>
+    </Window.Resources>
+    <VirtualizingStackPanel Margin="20" VerticalAlignment="Bottom" x:Name="panel"/>
+</Window>
